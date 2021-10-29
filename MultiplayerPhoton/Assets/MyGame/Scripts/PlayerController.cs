@@ -40,10 +40,6 @@ public class PlayerController : MonoBehaviourPun
         {
             PhotonNetwork.Instantiate(bulletGoPhotonView.name, spawBullet.transform.position, spawBullet.transform.rotation, 0);
         }
-        //if(Input.GetMouseButtonDown(1))
-        //{
-        //CRIAR CAMPO DE FORÇA
-        //}
     }
     [PunRPC]
     void Shoot()
@@ -62,19 +58,10 @@ public class PlayerController : MonoBehaviourPun
 
         if(playerHealtCurrent <= 0)
         {
-            //photonView.RPC("IsGameOuver", RpcTarget.MasterClient);
             Debug.Log("***GAMEOUVER****");
             Destroy(this.gameObject);
         }
     }
-
-    //void IsGameOuver()
-    //{
-    //    if(photonView.Owner.IsMasterClient)
-    //    {
-    //        Destroy(this.gameObject);
-    //    }
-    //}
     void HealthManager(float value)
     {
         playerHealtCurrent += value;
