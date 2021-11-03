@@ -38,4 +38,15 @@ public class BulletController : MonoBehaviour
             this.GetComponent<PhotonView>().RPC("BulletDestroy", RpcTarget.AllViaServer);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.name == "Colliders")
+        {
+            //Destroy(this.gameObject);
+            this.GetComponent<PhotonView>().RPC("BulletDestroy", RpcTarget.AllViaServer);
+        }        
+    }
+
+
 }

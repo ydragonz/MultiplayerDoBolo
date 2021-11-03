@@ -82,4 +82,12 @@ public class PlayerController : MonoBehaviourPun
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x , mousePosition.y - transform.position.y);
         transform.up = direction;
     }
+    //Realocar Player
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Barriers"))
+        {
+            transform.position = new Vector3(0, 1, 0);
+        }
+    }
 }
