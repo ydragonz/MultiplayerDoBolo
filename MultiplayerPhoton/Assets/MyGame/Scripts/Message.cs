@@ -48,6 +48,6 @@ public class Message : MonoBehaviourPunCallbacks
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
-        base.OnPlayerLeftRoom(otherPlayer); // "nome Player Saiu da Sala".
+        MostrarMsg(otherPlayer.NickName + msgGameOuver); // "nome Player Saiu da Sala".
     }
 }
