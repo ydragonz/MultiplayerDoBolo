@@ -64,7 +64,7 @@ public class NetWorkController : MonoBehaviourPunCallbacks
     public void BtCriarSala()
     {
         string roomNameTemp = roomName.text;
-        RoomOptions roomOptions = new RoomOptions() { MaxPlayers = 5 };
+        RoomOptions roomOptions = new RoomOptions() { MaxPlayers = 20 };
         PhotonNetwork.JoinOrCreateRoom(roomNameTemp, roomOptions, TypedLobby.Default);
     }
     //############MonoBehaviourPunCallbacks########
