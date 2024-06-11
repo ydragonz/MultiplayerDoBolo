@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 4031772857955394485}
   - component: {fileID: 4031772857955394486}
   - component: {fileID: 4031772857955394487}
-  - component: {fileID: -2884072321731487426}
   - component: {fileID: 6730502372605654047}
   - component: {fileID: 458811521552526198}
+  - component: {fileID: 8479265129937173043}
   m_Layer: 0
-  m_Name: BulletPhotonView
+  m_Name: BombPhotonView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 9
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,21 +126,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-2884072321731487426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4031772857955394488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f143308716cb24da216a274f2b5d8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 300
-  bulletTimeLife: 3
-  bulletDamage: 10
 --- !u!114 &6730502372605654047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +165,19 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &8479265129937173043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031772857955394488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62b3d5f8985ffe4294d92e3bee50353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombSpeed: 300
+  bombDamage: 10
+  explosionPrefab: {fileID: 4031772857955394488, guid: a3e544d245b7e82408a0acd748842bd1, type: 3}
+  explosionGoPhotonView: {fileID: 4031772857955394488, guid: 37a0f2324f367f940adf7c15427e5c41, type: 3}

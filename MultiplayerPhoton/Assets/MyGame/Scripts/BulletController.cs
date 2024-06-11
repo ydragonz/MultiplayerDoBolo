@@ -28,12 +28,11 @@ public class BulletController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Destroy(this.gameObject);
         if (collision.CompareTag("Player") && collision.GetComponent<PlayerController>() && collision.GetComponent<PhotonView>().IsMine)
         {
             Debug.Log("Player_ID " + collision.GetComponent<PhotonView>().Owner.ActorNumber + "Player_Name " + collision.GetComponent<PhotonView>().Owner.NickName);
 
-            collision.GetComponent<PlayerController>().TakeDamage(-bulletDamage);
+            collision.GetComponent<PlayerController>().TakeDamage(bulletDamage);
             collision.GetComponent<PlayerController>();
             this.GetComponent<PhotonView>().RPC("BulletDestroy", RpcTarget.AllViaServer);
         }
@@ -41,9 +40,9 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.name == "Colliders")
+        if(other.gameObject.tag == "Barriers")
         {
-            //Destroy(this.gameObject);
+        
             this.GetComponent<PhotonView>().RPC("BulletDestroy", RpcTarget.AllViaServer);
         }        
     }

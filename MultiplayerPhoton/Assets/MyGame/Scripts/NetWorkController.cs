@@ -12,6 +12,8 @@ public class NetWorkController : MonoBehaviourPunCallbacks
     public GameObject loginGO;
     public GameObject partidasGO;
     public GameObject informactionGO;
+    public GameObject gameOverGO;
+    public GameObject alunosGO;
 
     [Header("Player")]
     public InputField playerNameInput;
@@ -37,6 +39,8 @@ public class NetWorkController : MonoBehaviourPunCallbacks
         loginGO.gameObject.SetActive(true);
         partidasGO.gameObject.SetActive(false);
         informactionGO.gameObject.SetActive(false);
+        gameOverGO.gameObject.SetActive(false);
+        alunosGO.gameObject.SetActive(false);
     }
     public void BtLogin()
     {
@@ -55,6 +59,38 @@ public class NetWorkController : MonoBehaviourPunCallbacks
 
         loginGO.gameObject.SetActive(false);
         //partidasGO.gameObject.SetActive(true);
+    }
+
+    public void ShowInfo()
+    {
+        loginGO.gameObject.SetActive(false);
+        partidasGO.gameObject.SetActive(false);
+        informactionGO.gameObject.SetActive(false);
+        gameOverGO.gameObject.SetActive(false);
+
+        alunosGO.gameObject.SetActive(true);
+    }
+
+    public void ShowRetry()
+    {
+        loginGO.gameObject.SetActive(false);
+        partidasGO.gameObject.SetActive(false);
+        informactionGO.gameObject.SetActive(false);
+        alunosGO.gameObject.SetActive(false);
+
+        gameOverGO.gameObject.SetActive(true);
+        
+    }
+
+    public void ShowMenu()
+    {
+        partidasGO.gameObject.SetActive(false); 
+        informactionGO.gameObject.SetActive(false);
+        gameOverGO.gameObject.SetActive(false);
+        alunosGO.gameObject.SetActive(false);
+
+        loginGO.gameObject.SetActive(true);
+
     }
 
     public void BtBuscarPartidaRapida()
