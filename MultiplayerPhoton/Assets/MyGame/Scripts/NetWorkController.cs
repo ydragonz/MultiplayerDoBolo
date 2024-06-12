@@ -79,7 +79,9 @@ public class NetWorkController : MonoBehaviourPunCallbacks
         alunosGO.gameObject.SetActive(false);
 
         gameOverGO.gameObject.SetActive(true);
-        
+
+        PhotonNetwork.Disconnect();
+
     }
 
     public void ShowMenu()
@@ -90,8 +92,9 @@ public class NetWorkController : MonoBehaviourPunCallbacks
         alunosGO.gameObject.SetActive(false);
 
         loginGO.gameObject.SetActive(true);
-
+        PhotonNetwork.Disconnect();
     }
+
 
     public void BtBuscarPartidaRapida()
     {

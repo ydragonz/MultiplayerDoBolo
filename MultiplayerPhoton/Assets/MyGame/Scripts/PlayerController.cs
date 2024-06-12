@@ -82,10 +82,14 @@ public class PlayerController : MonoBehaviourPun
         if (playerHealtCurrent <= 0)
         {
             Debug.Log("***GAME OVER****");
-            networkController.ShowRetry(); // Chama o método para mostrar o retry
+            if (photonView.IsMine)
+            {
+                networkController.ShowRetry(); // Chama o método para mostrar o retry apenas para o jogador local
+            }
             Destroy(this.gameObject);
         }
     }
+
 
     void HealthManager(float value)
     {
